@@ -8,6 +8,7 @@ import { AccountModule } from './modules/account/module'
 import { MongooseModule } from '@nestjs/mongoose'
 import { MongooseConfigService } from './config/mongooseService'
 import { AuthModule } from './common/guards/auth/module'
+import { UploadModule } from './modules/upload/module'
 
 @Module({
   imports: [ 
@@ -23,7 +24,8 @@ import { AuthModule } from './common/guards/auth/module'
     RecordModule,
     UserModule,
     AccountModule,
-    AuthModule
+    AuthModule,
+    UploadModule
    ]
 })
 export class AppModule {}
