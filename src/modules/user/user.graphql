@@ -1,0 +1,48 @@
+type AuthenInfo {
+  token: String,
+  id: ID
+}
+
+input LoginInfoDTO {
+  usn: String,
+  pwd: String
+}
+
+input ChangePwdInfoDTO {
+  userId: String!,
+  oldPwd: String!,
+  newPwd: String!
+}
+
+type Accounts {
+  bank: Float,
+  cash: Float,
+  cc: Float
+}
+
+type Status {
+  status: Boolean
+}
+
+type User {
+  id: String,
+  name: String,
+  usn: String,
+  pwd: String,
+  accounts: Accounts,
+}
+
+input CreateUserInfoDTO {
+  name: String,
+  usn: String,
+  pwd: String
+}
+
+type Query{
+  login(loginInfo: LoginInfoDTO): AuthenInfo
+}
+
+type Mutation{
+  createUser(createUserInfo: CreateUserInfoDTO): User
+  updatePassword(changePwdInfo: ChangePwdInfoDTO): Status
+}

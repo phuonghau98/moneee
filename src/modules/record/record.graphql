@@ -1,0 +1,43 @@
+type Record{
+  id: ID!,
+  belongsTo: ID!,
+  amount: String!,
+  method: String!,
+  tag: String!
+  date: String!,
+  description: [Description]!
+}
+
+input RecordInput {
+  belongsTo: ID!,
+  amount: Float!,
+  method: String!,
+  tag: String!,
+  description: String
+}
+
+input DescriptionModifyPayload {
+  curUserId: ID!,
+  recordId: ID!,
+  content: String
+}
+
+type Description {
+  id: ID!,
+  content: String!,
+  date: String!
+}
+
+type Mutation {
+  createRecord(recordInfo: RecordInput): Record
+  deleteRecord(recordId: ID!): Record
+  modifyDescription(descriptionModifyPayload: DescriptionModifyPayload): Description
+}
+
+type Query {
+  getRecord(userId: ID!): [Record]
+}
+
+type Subscription{
+  recordCreated(userId: ID!): Record
+}

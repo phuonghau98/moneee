@@ -1,0 +1,6 @@
+export const CREATE_USER  = 'createUserInfo'
+export const LOGIN = 'loginInfo'
+export const CREATE_RECORD = 'recordInfo'
+export const DELETE_RECORD = 'recordId'
+export const CHANGE_PWD = 'changePwdInfo'
+export const MODIFY_RECORD_DESCRIPTION = 'descriptionModifyPayload'

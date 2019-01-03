@@ -1,0 +1,24 @@
+input ModifyPayload {
+  userId: ID!,
+  isIncrease: Boolean!,
+  amount: Float!,
+  code: String!
+}
+
+type Accounts{
+  bank: Float,
+  cc: Float,
+  cash: Float
+}
+
+type Query{
+  getAccounts(userId: ID): Accounts
+}
+
+type Mutation{
+  modifyAccounts(modifyPayload: ModifyPayload): Accounts
+}
+
+type Subscription{
+  accountsChanged(userId: ID): Accounts
+}
