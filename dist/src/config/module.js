@@ -9,12 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const graphqlService_1 = require("./graphqlService");
 const mongooseService_1 = require("./mongooseService");
+const multerService_1 = require("./multerService");
 let ConfigModule = class ConfigModule {
 };
 ConfigModule = __decorate([
     common_1.Module({
-        providers: [graphqlService_1.GqlConfigService, mongooseService_1.MongooseConfigService],
-        exports: [graphqlService_1.GqlConfigService, mongooseService_1.MongooseConfigService]
+        providers: [graphqlService_1.GqlConfigService, mongooseService_1.MongooseConfigService, multerService_1.MulterConfigService],
+        exports: [graphqlService_1.GqlConfigService, mongooseService_1.MongooseConfigService, multerService_1.MulterConfigService]
     })
 ], ConfigModule);
 exports.ConfigModule = ConfigModule;

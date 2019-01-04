@@ -7,17 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
 const module_1 = require("./config/module");
 const graphql_1 = require("@nestjs/graphql");
 const graphqlService_1 = require("./config/graphqlService");
-const module_2 = require("./record/module");
-const module_3 = require("./user/module");
-const module_4 = require("./account/module");
+const module_2 = require("./modules/record/module");
+const module_3 = require("./modules/user/module");
+const module_4 = require("./modules/account/module");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongooseService_1 = require("./config/mongooseService");
 const module_5 = require("./common/guards/auth/module");
+const module_6 = require("./modules/upload/module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -35,10 +34,9 @@ AppModule = __decorate([
             module_2.RecordModule,
             module_3.UserModule,
             module_4.AccountModule,
-            module_5.AuthModule
-        ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+            module_5.AuthModule,
+            module_6.UploadModule
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;

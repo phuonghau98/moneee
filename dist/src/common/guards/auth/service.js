@@ -30,14 +30,14 @@ let AuthService = class AuthService {
     constructor(userModel) {
         this.userModel = userModel;
     }
-    validate(authorizationHeader, userId) {
+    validateToken(authorizationHeader, userId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (authorizationHeader === undefined)
                 return false;
             const token = authorizationHeader.split(' ')[1];
             const decoded = jwt.verify(token, env_1.SECRET_CODE);
-            const user = yield this.userModel.findOne({ id: decoded.userId });
-            if (userId === decoded.userId)
+            const user = yield this.userModel.findOne({ _id: decoded.userId });
+            if (userId === decoded.userId && user.id === decoded.userId)
                 return true;
             throw new common_1.UnauthorizedException('Something went wrong!');
         });

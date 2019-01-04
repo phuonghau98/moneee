@@ -1,8 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+class ChangePwdInfoDTO {
+}
+exports.ChangePwdInfoDTO = ChangePwdInfoDTO;
 class CreateUserInfoDTO {
 }
 exports.CreateUserInfoDTO = CreateUserInfoDTO;
+class DescriptionModifyPayload {
+}
+exports.DescriptionModifyPayload = DescriptionModifyPayload;
 class LoginInfoDTO {
 }
 exports.LoginInfoDTO = LoginInfoDTO;
@@ -30,6 +36,9 @@ exports.IQuery = IQuery;
 class Record {
 }
 exports.Record = Record;
+class Status {
+}
+exports.Status = Status;
 class ISubscription {
 }
 exports.ISubscription = ISubscription;
