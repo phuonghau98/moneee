@@ -1,6 +1,6 @@
 import { Controller, Get, Post, UploadedFile, UseInterceptors, FileInterceptor } from "@nestjs/common"
 import { UploadService } from "./service"
-
+import { join } from 'path'
 @Controller('upload')
 export class UploadController {
   constructor(private readonly uploadService: UploadService) { }
@@ -11,8 +11,8 @@ export class UploadController {
   }
 
   @Post('photo')
-  @UseInterceptors(FileInterceptor('file'))
+  @UseInterceptors(FileInterceptor('profile_image'))
   uploadPhoto(@UploadedFile() photo) {
-    console.log('Hello there')
+    console.log(photo)
   }
 }

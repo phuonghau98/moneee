@@ -28,9 +28,9 @@ let TokenGuard = class TokenGuard {
         return __awaiter(this, void 0, void 0, function* () {
             const ctx = graphql_1.GqlExecutionContext.create(context);
             const req = yield ctx.getContext().req;
-            const idArg = ctx.getArgs().userId;
             const authorizationHeader = yield req.headers.authorization;
-            return yield this.authService.validate(authorizationHeader, idArg);
+            const useridHeader = yield req.headers.userid;
+            return yield this.authService.validateToken(authorizationHeader, useridHeader);
         });
     }
 };

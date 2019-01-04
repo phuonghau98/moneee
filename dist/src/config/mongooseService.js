@@ -7,10 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const config_1 = require("../constants/config");
 let MongooseConfigService = class MongooseConfigService {
     createMongooseOptions() {
         return {
-            uri: 'mongodb://127.0.0.1:27017/monee'
+            uri: config_1.MONGO_URI
         };
     }
 };

@@ -28,6 +28,10 @@ let UserValidationPipe = class UserValidationPipe {
                 if (this.isUsernameValid(user.usn) && this.isNameValid(user.name) && this.isPasswordValid(user.pwd))
                     return user;
                 throw new common_1.BadRequestException('Register info is invalid');
+            case resolverArguments_1.CHANGE_PWD:
+                if (this.isPasswordValid(user.newPwd))
+                    return user;
+                throw new common_1.BadRequestException('Password is not valid');
             default:
                 return user;
         }

@@ -44,6 +44,8 @@ let UserTransformerPipe = class UserTransformerPipe {
             switch (metadata.data) {
                 case resolverArguments_1.CREATE_USER:
                     return yield this.initUser(user, { accounts: this.getInitAccounts() }, { pwd: yield this.encrytPassword(user.pwd) });
+                case resolverArguments_1.CHANGE_PWD:
+                    return yield this.initUser(user, { newPwd: yield this.encrytPassword(user.newPwd) });
                 default:
                     return user;
             }
